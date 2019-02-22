@@ -4,7 +4,17 @@ app.yummlyApiKey = '4232b467d64427cc7880acacaa0f27bc';
 app.yummlyApiUrl = 'http://api.yummly.com/v1/api/recipes?';
 app.yummlyApiID = '44d38b57';
 
-app.init = function(){
+app.movieDBKey = '59be6234ea545ba637c135657e114e1d'
+app.movieDBUrl = 'https://api.themoviedb.org/3/search/movie'
+
+  $(function () {
+    app.init();
+    // console.log('document')
+  })
+
+app.init = function () {
+
+  // FIRST CALL TO YUMMLY API
   $.ajax({
     url: app.yummlyApiUrl,
     method: 'GET',
@@ -13,30 +23,22 @@ app.init = function(){
       _app_id: app.yummlyApiID,
       _app_key: app.yummlyApiKey,
     }
-  }).then(function(result) {
+  }).then(function (result) {
     console.log(result)
     // console.log('it works')
   })
-}
 
-const movieApp = {};
-
-
-$(function () {
-  app.init();
-  console.log('document')
-})
-
-
-movieApp.getMovies = () => {
-    $.ajax({
-        url: movieApp.apiURL,
-        method:'GET',
-        dataType: 'jsonp',
-        data: {
-            key: movieApp.apiKey 
-        }
-    }).then((result) => {
-        console.log('test')
+  // FIRST CALL TO MOVIE DB
+  $.ajax({
+    url: app.movieDBUrl,
+    method: 'GET',
+    dataType: 'json',
+    data: {
+      api_key: app.movieDBKey,
+      query: 'rocky',
+      // sort_by: “popularity.desc”
+    }
+    }).then((res) => {
+      console.log(res)
     });
 }
