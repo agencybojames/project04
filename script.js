@@ -49,7 +49,6 @@ app.getData = function () {
       requirePictures: true,
       maxResult: 100,
       'allowedCuisine[]': `cuisine^cuisine-${app.userCuisine}`,
-      ''
     }
   }).then(function (result) {
     console.log(result)
