@@ -48,7 +48,6 @@ app.init = function () {
     console.log(res)
   });
 
-<<<<<<< HEAD
 
 
   // submit form and prevent default
@@ -58,9 +57,8 @@ app.init = function () {
     // every time we 'submit', run the following code:
 
     // gather user input data by the value attribute
-    let userCuisine = $('select[name=cuisine]:selected').val()
+    let userCuisine = $('#cuisineChoice').val()
+    console.log(userCuisine)
     
   })
-=======
->>>>>>> 6b62233a0d9bd8c975401192ec22b5b642b54f56
 }
