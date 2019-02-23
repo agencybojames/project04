@@ -59,6 +59,7 @@ app.init = function () {
     // gather user input data by the value attribute
     let userCuisine = $('#cuisineChoice').val()
     console.log(userCuisine)
-    
+
+    // final change
   })
 }
