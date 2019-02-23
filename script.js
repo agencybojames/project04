@@ -12,7 +12,7 @@ $(function () {
   // console.log('document')
 })
 
-app.formSubmit = function() {
+app.formSubmit = function () {
   // submit form and prevent default
   $('form').on('submit', (event) => {
     event.preventDefault();
@@ -27,7 +27,7 @@ app.formSubmit = function() {
     console.log(app.userFlavour)
 
     // use app.userFlavour to filter highest flavour range 
-    //
+
 
     // gather user input of cookTime
     app.userCookTime = $('#timeChoice').val()
@@ -75,5 +75,5 @@ app.getData = function () {
 app.init = function () {
 
   app.formSubmit();
-  
+
 }
