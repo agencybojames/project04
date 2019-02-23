@@ -11,82 +11,93 @@
 
 <body>
     <main>
-        <form action="submit" id="recipe">
+        <form action="submit" class="recipe">
             <fieldset>
-                <legend>Choose a cuisine</legend>
-                <label for="chinese">Chinese</label>
-                <input type="radio" id="chinese" name="cuisineChoice" value="chinese">
-
-                <label for="north american">North American</label>
-                <input type="radio" id="northAmerican" name="cuisineChoice" value="american">
-
-                <label for="french">French</label>
-                <input type="radio" id="french" name="cuisineChoice" value="french">
-
-                <label for="indian">Indian</label>
-                <input type="radio" id="indian" name="cuisineChoice" value="indian">
-
-                <label for="chinese">French</label>
-                <input type="radio" id="french" name="cuisineChoice" value="french">
-
-                <label for="italian">Italian</label>
-                <input type="radio" id="italian" name="cuisineChoice" value="italian">
-
-                <label for="Mexican">Mexican</label>
-                <input type="radio" id="mexican" name="cuisineChoice" value="mexican">
-
-                <label for="Mediterranean">Mediterranean</label>
-                <input type="radio" id="mediterranean" name="cuisineChoice" value="mediterranean">
-                <button></button>
+                <legend>Cuisine</legend>
+                <select name="cuisine" id="cuisineChoice">
+                    <option>select cuisine</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="american">North American</option>
+                    <option value="french">French</option> 
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="mediterranean">Mediterranean</option>
+                </select>
             </fieldset>
-            <legend>Enter ingredients, one by one, that your recipe must include</legend>
-            <input type="text">
             <fieldset>
-
+                <legend>Main Ingredient</legend>
+                <input type="text" id="ingredients" name="ingredientChoice">
+                <button>next</button>
+            </fieldset>
+            <fieldset>
+                <legend>Flavour</legend>
+                <select name="flavour" id="flavourChoice">
+                    <option>select flavour</option>
+                    <option value="salty">Salty</option>
+                    <option value="sweet">Sweet</option>
+                    <option value="meaty">Meaty</option>
+                    <option value="sour">Sour</option>
+                    <option value="piquant">Spicy</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Max prep and cook time (in minutes)</legend>
+                <input type="text" id="time" name="timeChoice" placeholder="">
             </fieldset>
         </form>
-        <!--------------------------------- Select movie genre ---------------------------------->
-        <div class="container_search">
-            <form id="form" autocomplete="on">
-                <input type="text" id="inputField" placeholder="Genre">
-                <span id="questionMark"><i class="material-icons">info</i></span>
-                <div class="wrap">
-                    <select id="selectedGenres" onchange="this.form.submit()">
+        <form action="submit" id="movies">
+            <fieldset>
+                <legend>Movie genre</legend>
+                <select id="selectedGenres" onchange="">
                         <option>SELECT MOVIE GENRE </option>
-                        <option id="28" class="tag">Action</option>
-                        <option id="12" class="tag">Adventure</option>
-                        <option id="16" class="tag">Animation</option>
-                        <option id="35" class="tag">Comedy</option>
-                        <option id="80" class="tag">Crime</option>
-                        <option id="99" class="tag">Documentary</option>
-                        <option id="18" class="tag">Drama</option>
-                        <option id="10751" class="tag">Family</option>
-                        <option id="14" class="tag">Fantasy</option>
-                        <option id="36" class="tag">History</option>
-                        <option id="27" class="tag">Horror</option>
-                        <option id="10402" class="tag">Music</option>
-                        <option id="9648" class="tag">Mystery</option>
-                        <option id="10749" class="tag">Romance</option>
-                        <option id="878" class="tag">Sci-Fi</option>
-                        <option id="53" class="tag">Thriller</option>
-                        <option id="10752" class="tag">War</option>
-                        <option id="37" class="tag">Western</option>
-                        <option id="10770" class="tag">TV Movie</option>
+                        <option id="28">Action</option>
+                        <option id="12">Adventure</option>
+                        <option id="16">Animation</option>
+                        <option id="35">Comedy</option>
+                        <option id="80">Crime</option>
+                        <option id="99">Documentary</option>
+                        <option id="18">Drama</option>
+                        <option id="10751">Family</option>
+                        <option id="14">Fantasy</option>
+                        <option id="36">History</option>
+                        <option id="27">Horror</option>
+                        <option id="10402">Music</option>
+                        <option id="9648">Mystery</option>
+                        <option id="10749">Romance</option>
+                        <option id="878">Sci-Fi</option>
+                        <option id="53">Thriller</option>
+                        <option id="10752">War</option>
+                        <option id="37">Western</option>
+                        <option id="10770">TV Movie</option>
                     </select>
-            </form>
-            </div>
-        </div>
-        <div class="showcase">
-            <h1 id="searchedFor"></h1>
-            <div id="movies" class="moviesRows"></div>
-        </div>
+            </fieldset>
+            <fieldset>
+                <legend>Decade</legend>
+                <label for="">50s</label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for="">60s</label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+            </fieldset>
+            <fieldset>
+                
+            </fieldset>
+        </form>
+     
+
     </main>
 
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
         crossorigin='anonymous'></script>
     <script src="script.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </body>
 
