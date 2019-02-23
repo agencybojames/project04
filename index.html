@@ -8,72 +8,101 @@
     <link rel="stylesheet" href="styles/styles.css">
     <title>Custom Dinner and a Movie</title>
 </head>
+
 <body>
-<main>
-    <form action="submit" id="recipe">
-        <fieldset>
-            <legend>Choose a cuisine</legend>
-            <label for="chinese">Chinese</label>
-            <input type="radio" id="chinese" name="cuisineChoice" value="chinese">
-
-            <label for="north american">North American</label>
-            <input type="radio" id="northAmerican" name="cuisineChoice" value="american">
-            
-            <label for="french">French</label>
-            <input type="radio" id="french" name="cuisineChoice" value="french">
-
-            <label for="indian">Indian</label>
-            <input type="radio" id="indian" name="cuisineChoice" value="indian">
-
-            <label for="chinese">French</label>
-            <input type="radio" id="french" name="cuisineChoice" value="french">
-
-            <label for="italian">Italian</label>
-            <input type="radio" id="italian" name="cuisineChoice" value="italian">
-
-            <label for="mexican">Mexican</label>
-            <input type="radio" id="mexican" name="cuisineChoice" value="mexican">
-
-            <label for="mediterranean">Mediterranean</label>
-            <input type="radio" id="mediterranean" name="cuisineChoice" value="mediterranean">
-            <button></button>
-        </fieldset>
-            <legend>Enter ingredients, one by one, that your recipe must include</legend>
-            <input type="text" id="ingredients" name="ingredientChoice">
-        <fieldset>
+    <main>
+        <form action="submit" id="recipe">
             <fieldset>
-                <legend>Choose how strong you want your flavours</legend>
-                    <input type="range" id="" name="flavourChoice" min="0" max="10">
-                    <label for="flavourChoice">Salty</label>
-                    
-                    <label for="Salty">Bitter</label>
-                    <input type="checkbox" id="chinese" name="cuisineChoice" value="chinese">
-                    
-                    <label for="north american">North American</label>
-                    <input type="checkbox" id="northAmerican" name="cuisineChoice" value="american">
-                    
-                    <label for="french">French</label>
-                    <input type="checkbox" id="french" name="cuisineChoice" value="french">
-                    
-                    <label for="indian">Indian</label>
-                    <input type="checkbox" id="indian" name="cuisineChoice" value="indian">
-                    
-                    <label for="chinese">French</label>
-                    <input type="checkbox" id="french" name="cuisineChoice" value="french">
-                    
-                    <label for="italian">Italian</label>
-                    <input type="checkbox" id="italian" name="cuisineChoice" value="italian">
-                    
-                    <label for="Mexican">Mexican</label>
-                    <input type="checkbox" id="mexican" name="cuisineChoice" value="mexican">
-                    
-                    <label for="Mediterranean">Mediterranean</label>
-                    <input type="checkbox" id="mediterranean" name="cuisineChoice" value="mediterranean">
-            </fieldset>
+                <legend>Cuisine</legend>
 
-        </fieldset>
-    </form>
-</main>
+                <label for="chinese">Chinese</label>
+                <input type="radio" id="chinese" name="cuisineChoice" value="chinese">
+
+                <label for="american">North American</label>
+                <input type="radio" id="northAmerican" name="cuisineChoice" value="american">
+
+                <label for="french">French</label>
+                <input type="radio" id="french" name="cuisineChoice" value="french">
+
+                <label for="indian">Indian</label>
+                <input type="radio" id="indian" name="cuisineChoice" value="indian">
+
+                <label for="chinese">French</label>
+                <input type="radio" id="french" name="cuisineChoice" value="french">
+
+                <label for="italian">Italian</label>
+                <input type="radio" id="italian" name="cuisineChoice" value="italian">
+
+                <label for="mexican">Mexican</label>
+                <input type="radio" id="mexican" name="cuisineChoice" value="mexican">
+
+                <label for="mediterranean">Mediterranean</label>
+                <input type="radio" id="mediterranean" name="cuisineChoice" value="mediterranean">
+                <button>next</button>
+            </fieldset>
+            <fieldset>
+                <legend>Main Ingredient</legend>
+                <input type="text" id="ingredients" name="ingredientChoice">
+                <button>next</button>
+            </fieldset>
+            <fieldset>
+                <legend>Flavour</legend>
+
+                <label for="salty">Salty</label>
+                <input type="radio" id="salty" name="flavourChoice" value="salty">
+
+                <label for="sweet">Sweet</label>
+                <input type="radio" id="sweet" name="flavourChoice" value="sweet">
+
+                <label for="meaty">Meaty</label>
+                <input type="radio" id="meaty" name="flavourChoice" value="meaty">
+
+                <label for="sour">Sour</label>
+                <input type="radio" id="sour" name="flavourChoice" value="sour">
+
+                <label for="piquant">Piquant</label>
+                <input type="radio" id="piquant" name="flavourChoice" value="piquant">
+                <button>next</button>
+            </fieldset>
+            <fieldset>
+                <legend>Max prep and cook time (in minutes)</legend>
+                <input type="text" id="time" name="timeChoice" placeholder="">
+            </fieldset>
+        </form>
+        <form action="submit" id="movies">
+            <fieldset>
+                <legend>Movie genre</legend>
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+            </fieldset>
+            <fieldset>
+                <legend>Decade</legend>
+                <label for="">50s</label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for="">60s</label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+                
+                <label for=""></label>
+                <input type="radio" id="" name="genreChoice" value="">
+            </fieldset>
+            <fieldset>
+                
+            </fieldset>
+        </form>
+    </main>
 
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'

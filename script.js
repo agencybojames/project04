@@ -7,14 +7,13 @@ app.yummlyApiID = '44d38b57';
 app.movieDBKey = '59be6234ea545ba637c135657e114e1d'
 app.movieDBUrl = 'https://api.themoviedb.org/3/discover/movie'
 
-  $(function () {
-    app.init();
-    // console.log('document')
-  })
+$(function () {
+  app.init();
+})
 
 app.init = function () {
 
-  // FIRST CALL TO YUMMLY API
+  // AJAX CALL TO YUMMLY API
   $.ajax({
     url: app.yummlyApiUrl,
     method: 'GET',
@@ -31,7 +30,7 @@ app.init = function () {
     // console.log('it works')
   })
 
-  // FIRST CALL TO MOVIE DB
+  // AJAX CALL TO MOVIE DB
   $.ajax({
     url: app.movieDBUrl,
     method: 'GET',
@@ -41,7 +40,7 @@ app.init = function () {
       // query: 'rocky',
       // sort_by: “popularity.desc”
     }
-    }).then((res) => {
-      console.log(res)
-    });
+  }).then((res) => {
+    console.log(res)
+  });
 }
