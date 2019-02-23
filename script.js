@@ -9,6 +9,7 @@ app.movieDBUrl = 'https://api.themoviedb.org/3/discover/movie'
 
 $(function () {
   app.init();
+  // console.log('document')
 })
 
 app.init = function () {
@@ -40,11 +41,14 @@ app.init = function () {
       api_key: app.movieDBKey,
       // query: 'rocky',
       // sort_by: “popularity.desc”
+
     }
+
   }).then((res) => {
     console.log(res)
   });
 
+<<<<<<< HEAD
 
 
   // submit form and prevent default
@@ -57,4 +61,6 @@ app.init = function () {
     let userCuisine = $('select[name=cuisine]:selected').val()
     
   })
+=======
+>>>>>>> 6b62233a0d9bd8c975401192ec22b5b642b54f56
 }

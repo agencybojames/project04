@@ -14,31 +14,16 @@
         <form action="submit" class="recipe">
             <fieldset>
                 <legend>Cuisine</legend>
-
-                <label for="chinese">Chinese</label>
-                <input type="radio" id="chinese" name="cuisineChoice" value="chinese">
-
-                <label for="american">North American</label>
-                <input type="radio" id="northAmerican" name="cuisineChoice" value="american">
-
-                <label for="french">French</label>
-                <input type="radio" id="french" name="cuisineChoice" value="french">
-
-                <label for="indian">Indian</label>
-                <input type="radio" id="indian" name="cuisineChoice" value="indian">
-
-                <label for="chinese">French</label>
-                <input type="radio" id="french" name="cuisineChoice" value="french">
-
-                <label for="italian">Italian</label>
-                <input type="radio" id="italian" name="cuisineChoice" value="italian">
-
-                <label for="mexican">Mexican</label>
-                <input type="radio" id="mexican" name="cuisineChoice" value="mexican">
-
-                <label for="mediterranean">Mediterranean</label>
-                <input type="radio" id="mediterranean" name="cuisineChoice" value="mediterranean">
-                <button>next</button>
+                <select name="cuisine" id="cuisineChoice">
+                    <option>select cuisine</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="american">North American</option>
+                    <option value="french">French</option> 
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="mediterranean">Mediterranean</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Main Ingredient</legend>
@@ -47,22 +32,14 @@
             </fieldset>
             <fieldset>
                 <legend>Flavour</legend>
-
-                <label for="salty">Salty</label>
-                <input type="radio" id="salty" name="flavourChoice" value="salty">
-
-                <label for="sweet">Sweet</label>
-                <input type="radio" id="sweet" name="flavourChoice" value="sweet">
-
-                <label for="meaty">Meaty</label>
-                <input type="radio" id="meaty" name="flavourChoice" value="meaty">
-
-                <label for="sour">Sour</label>
-                <input type="radio" id="sour" name="flavourChoice" value="sour">
-
-                <label for="piquant">Piquant</label>
-                <input type="radio" id="piquant" name="flavourChoice" value="piquant">
-                <button>next</button>
+                <select name="flavour" id="flavourChoice">
+                    <option>select flavour</option>
+                    <option value="salty">Salty</option>
+                    <option value="sweet">Sweet</option>
+                    <option value="meaty">Meaty</option>
+                    <option value="sour">Sour</option>
+                    <option value="piquant">Spicy</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Max prep and cook time (in minutes)</legend>
@@ -72,17 +49,28 @@
         <form action="submit" class="movies">
             <fieldset>
                 <legend>Movie genre</legend>
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
-
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
-
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
-
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
+                <select id="selectedGenres" onchange="">
+                        <option>SELECT MOVIE GENRE </option>
+                        <option id="28">Action</option>
+                        <option id="12">Adventure</option>
+                        <option id="16">Animation</option>
+                        <option id="35">Comedy</option>
+                        <option id="80">Crime</option>
+                        <option id="99">Documentary</option>
+                        <option id="18">Drama</option>
+                        <option id="10751">Family</option>
+                        <option id="14">Fantasy</option>
+                        <option id="36">History</option>
+                        <option id="27">Horror</option>
+                        <option id="10402">Music</option>
+                        <option id="9648">Mystery</option>
+                        <option id="10749">Romance</option>
+                        <option id="878">Sci-Fi</option>
+                        <option id="53">Thriller</option>
+                        <option id="10752">War</option>
+                        <option id="37">Western</option>
+                        <option id="10770">TV Movie</option>
+                    </select>
             </fieldset>
             <fieldset>
                 <legend>Decade</legend>
@@ -103,11 +91,13 @@
             </fieldset>
             <input type="submit" value="submit">
         </form>
+     
+
     </main>
 
 
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js'
-        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+        crossorigin='anonymous'></script>
     <script src="script.js"></script>
 
 </body>
