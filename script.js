@@ -12,8 +12,32 @@ $(function () {
   // console.log('document')
 })
 
-app.init = function () {
+app.formSubmit = function() {
+  // submit form and prevent default
+  $('form').on('submit', (event) => {
+    event.preventDefault();
 
+    // every time we 'submit', run the following code:
+    // gather user choice of cuisine
+    app.userCuisine = $('#cuisineChoice').val()
+    console.log(app.userCuisine)
+
+    // gather user choice of flavour
+    app.userFlavour = $('#flavourChoice').val()
+    console.log(app.userFlavour)
+
+    // use app.userFlavour to filter highest flavour range 
+    //
+
+    // gather user input of cookTime
+    app.userCookTime = $('#timeChoice').val()
+    console.log(app.userCookTime)
+
+    app.getData();
+  })
+}
+
+app.getData = function () {
   // AJAX CALL TO YUMMLY API
   $.ajax({
     url: app.yummlyApiUrl,
@@ -24,8 +48,7 @@ app.init = function () {
       _app_key: app.yummlyApiKey,
       requirePictures: true,
       maxResult: 100,
-      
-      'allowedCuisine[]': 'cuisine^cuisine-chinese',
+      'allowedCuisine[]': `cuisine^cuisine-${app.userCuisine}`,
     }
   }).then(function (result) {
     console.log(result)
@@ -47,19 +70,10 @@ app.init = function () {
   }).then((res) => {
     console.log(res)
   });
+}
 
+app.init = function () {
 
-
-  // submit form and prevent default
-  $('form').on('submit', (event) => {
-    event.preventDefault();
-
-    // every time we 'submit', run the following code:
-
-    // gather user input data by the value attribute
-    let userCuisine = $('#cuisineChoice').val()
-    console.log(userCuisine)
-
-    // final change
-  })
+  app.formSubmit();
+  
 }
