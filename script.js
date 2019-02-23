@@ -47,7 +47,7 @@ app.init = function () {
     console.log(res)
   });
 
-  //Get the value from the form on submit and then run the functions.
+  //Get the value from the drop down on submit and then run the functions.
   const form = document.getElementById("form");
 
   // Object.freeze makes the object read-only, defending it from "hacky" activities. 
