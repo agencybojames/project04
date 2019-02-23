@@ -15,25 +15,32 @@
             <fieldset>
                 <legend>Cuisine</legend>
                 <select name="cuisine" id="cuisineChoice">
-                    <option>select cuisine</option>
+                    <option>Select cuisine</option>
                     <option value="chinese">Chinese</option>
                     <option value="american">North American</option>
-                    <option value="french">French</option> 
+                    <option value="french">French</option>
                     <option value="indian">Indian</option>
                     <option value="italian">Italian</option>
                     <option value="mexican">Mexican</option>
                     <option value="mediterranean">Mediterranean</option>
                 </select>
             </fieldset>
-            <fieldset>
+            <!-- <fieldset>
                 <legend>Main Ingredient</legend>
-                <input type="text" id="ingredients" name="ingredientChoice">
-                <button>next</button>
-            </fieldset>
+                <select name="ingredients" id="ingredientChoice">
+                    <option>select main ingredientChoice</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="pork">Pork</option>
+                    <option value="lamb">Lamb</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="beef">Beef</option>
+                    <option value="fish">Fish</option>
+                </select>
+            </fieldset> -->
             <fieldset>
                 <legend>Flavour</legend>
                 <select name="flavour" id="flavourChoice">
-                    <option>select flavour</option>
+                    <option>Select flavour</option>
                     <option value="salty">Salty</option>
                     <option value="sweet">Sweet</option>
                     <option value="meaty">Meaty</option>
@@ -43,54 +50,60 @@
             </fieldset>
             <fieldset>
                 <legend>Max prep and cook time (in minutes)</legend>
-                <input type="text" id="time" name="timeChoice" placeholder="">
+                <select name="cookTime" id="timeChoice">
+                    <option>Select cook time</option>
+                    <option value="900">15 Minutes</option>
+                    <option value="1800">30 minutes</option>
+                    <option value="3600">1 hours</option>
+                    <option value="7200">2 hours</option>
+                </select>
             </fieldset>
         </form>
-        <form action="submit" id="movies">
+        <form action="submit" class="movies">
             <fieldset>
                 <legend>Movie genre</legend>
-                <select id="selectedGenres" onchange="">
-                        <option>SELECT MOVIE GENRE </option>
-                        <option id="28">Action</option>
-                        <option id="12">Adventure</option>
-                        <option id="16">Animation</option>
-                        <option id="35">Comedy</option>
-                        <option id="80">Crime</option>
-                        <option id="99">Documentary</option>
-                        <option id="18">Drama</option>
-                        <option id="10751">Family</option>
-                        <option id="14">Fantasy</option>
-                        <option id="36">History</option>
-                        <option id="27">Horror</option>
-                        <option id="10402">Music</option>
-                        <option id="9648">Mystery</option>
-                        <option id="10749">Romance</option>
-                        <option id="878">Sci-Fi</option>
-                        <option id="53">Thriller</option>
-                        <option id="10752">War</option>
-                        <option id="37">Western</option>
-                        <option id="10770">TV Movie</option>
-                    </select>
+                <select name="genre" id="genreChoice">
+                    <option>Select movie genre</option>
+                    <option id="28">Action</option>
+                    <option id="12">Adventure</option>
+                    <option id="16">Animation</option>
+                    <option id="35">Comedy</option>
+                    <option id="80">Crime</option>
+                    <option id="99">Documentary</option>
+                    <option id="18">Drama</option>
+                    <option id="10751">Family</option>
+                    <option id="14">Fantasy</option>
+                    <option id="36">History</option>
+                    <option id="27">Horror</option>
+                    <option id="10402">Music</option>
+                    <option id="9648">Mystery</option>
+                    <option id="10749">Romance</option>
+                    <option id="878">Sci-Fi</option>
+                    <option id="53">Thriller</option>
+                    <option id="10752">War</option>
+                    <option id="37">Western</option>
+                    <option id="10770">TV Movie</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Decade</legend>
-                <label for="">50s</label>
-                <input type="radio" id="" name="genreChoice" value="">
-                
-                <label for="">60s</label>
-                <input type="radio" id="" name="genreChoice" value="">
-                
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
-                
-                <label for=""></label>
-                <input type="radio" id="" name="genreChoice" value="">
+                <select name="decade" id="decadeChoice">
+                    <option>Select movie decade</option>
+                    <option value="50s">1950s</option>
+                    <option value="60s">1960s</option>
+                    <option value="70s">1970s</option>
+                    <option value="80s">1980s</option>
+                    <option value="90s">1990s</option>
+                    <option value="00s">2000s</option>
+                    <option value="10s">2010s</option>
+                </select>
             </fieldset>
             <fieldset>
-                
+
             </fieldset>
+            <input type="submit" value="submit">
         </form>
-     
+
 
     </main>
 

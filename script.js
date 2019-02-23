@@ -24,6 +24,7 @@ app.init = function () {
       _app_key: app.yummlyApiKey,
       requirePictures: true,
       maxResult: 100,
+      
       'allowedCuisine[]': 'cuisine^cuisine-chinese',
     }
   }).then(function (result) {
@@ -47,4 +48,18 @@ app.init = function () {
     console.log(res)
   });
 
+
+
+  // submit form and prevent default
+  $('form').on('submit', (event) => {
+    event.preventDefault();
+
+    // every time we 'submit', run the following code:
+
+    // gather user input data by the value attribute
+    let userCuisine = $('#cuisineChoice').val()
+    console.log(userCuisine)
+
+    // final change
+  })
 }
