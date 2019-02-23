@@ -29,9 +29,21 @@ app.formSubmit = function () {
     // use app.userFlavour to filter highest flavour range 
 
 
-    // gather user input of cookTime
+    // gather user choice of cookTime
     app.userCookTime = $('#timeChoice').val()
     console.log(app.userCookTime)
+
+    // gather user choice of Movie Genre
+    app.userGenre = $('#genreChoice').val()
+    console.log(app.userGenre)
+
+    // gather user choice of movie year
+    app.userDecade = $('#decadeChoice').val()
+    console.log(app.userDecade)
+
+    //gather user choice of movie rating
+    app.userRating = $('#ratingChoice').val()
+    console.log(app.userRating)
 
     app.getData();
   })
