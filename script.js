@@ -12,14 +12,19 @@ app.formSubmit = function () {
   // prevent default
   $('form').on('submit', (event) => {
     event.preventDefault();
+    console.log(event)
 
     // gather user choice of Movie Genre
     app.userGenre = $('#genreChoice').val()
     console.log(app.userGenre)
 
-    // gather user choice of movie year
-    app.userDecade = $('#decadeChoice').val()
-    console.log(app.userDecade)
+    // gather user choice of minimum movie release year
+    app.userMinYear = $('#minYear').val()
+    console.log(app.userMinYear)
+
+    // gather user choice of maximum movie release year
+    app.userMaxYear = $('#maxYear').val()
+    console.log(app.userMaxYear)
 
     //gather user choice of movie rating
     app.userRating = $('#ratingChoice').val()
@@ -43,28 +48,29 @@ app.getData = function () {
       with_genres: app.userGenre,
       'vote_average.gte': app.userRating,
       sort_by: 'popularity.desc',
-      'primary_release_date.gte': 1998,
-      'primary_release_date.lte': 2004,
+      'primary_release_date.gte': app.userMinYear,
+      'primary_release_date.lte': app.userMaxYear,
     }
+    // res becomes the object that carries the "result" array
   }).then((res) => {
-    console.log(res.results)
+    // get all results
+    const movieResults = res.results;
+    console.log(movieResults);
+    // get movie genre
+    // const movieGenre = movieResults.genre_ids;
+
+    // console.log(movieGenre);
+
   });
 
+}
 
 
 
 
+app.init = function () {
 
-
-
-
-
-  app.init = function () {
-
-    app.formSubmit();
-
-  }
-
-
+  app.formSubmit();
 
 }
+
