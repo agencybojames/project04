@@ -15,7 +15,7 @@
             <fieldset>
                 <legend>Cuisine</legend>
                 <select name="cuisine" id="cuisineChoice">
-                    <option value="">Select cuisine</option>
+                    <option>Select cuisine</option>
                     <option value="chinese">Chinese</option>
                     <option value="american">North American</option>
                     <option value="french">French</option>
@@ -25,22 +25,10 @@
                     <option value="mediterranean">Mediterranean</option>
                 </select>
             </fieldset>
-            <!-- <fieldset>
-                <legend>Main Ingredient</legend>
-                <select name="ingredients" id="ingredientChoice">
-                    <option>select main ingredientChoice</option>
-                    <option value="vegetables">Vegetables</option>
-                    <option value="pork">Pork</option>
-                    <option value="lamb">Lamb</option>
-                    <option value="chicken">Chicken</option>
-                    <option value="beef">Beef</option>
-                    <option value="fish">Fish</option>
-                </select>
-            </fieldset> -->
             <fieldset>
                 <legend>Flavour</legend>
                 <select name="flavour" id="flavourChoice">
-                    <option value="">Select flavour</option>
+                    <option>Select flavour</option>
                     <option value="salty">Salty</option>
                     <option value="sweet">Sweet</option>
                     <option value="meaty">Meaty</option>
@@ -51,7 +39,7 @@
             <fieldset>
                 <legend>Maximum preparation and cook time</legend>
                 <select name="cookTime" id="timeChoice">
-                    <option value="">Select cook time</option>
+                    <option>Select cook time</option>
                     <option value="900">15 Minutes</option>
                     <option value="1800">30 minutes</option>
                     <option value="3600">1 hours</option>
@@ -63,7 +51,7 @@
             <fieldset>
                 <legend>Movie Genre</legend>
                 <select name="genre" id="genreChoice">
-                    <option value="">Select movie genre</option>
+                    <option>Select movie genre</option>
                     <option value="28">Action</option>
                     <option value="12">Adventure</option>
                     <option value="16">Animation</option>
@@ -86,22 +74,14 @@
                 </select>
             </fieldset>
             <fieldset>
-                <legend>Movie Decade</legend>
-                <select name="decade" id="decadeChoice">
-                    <option value="">Select movie decade</option>
-                    <option value="50s">1950s</option>
-                    <option value="60s">1960s</option>
-                    <option value="70s">1970s</option>
-                    <option value="80s">1980s</option>
-                    <option value="90s">1990s</option>
-                    <option value="00s">2000s</option>
-                    <option value="10s">2010s</option>
-                </select>
+                <legend>Movie Year Range</legend>
+                <label for="minYear">From year:</label>
+                <input type="text" value="year" name>
             </fieldset>
             <fieldset>
                 <legend>Minimum Movie Rating</legend>
                 <select name="rating" id="ratingChoice">
-                    <option value="">Select minimum rating</option>
+                    <option>Select minimum rating</option>
                     <option value="2">1</option>
                     <option value="4">2</option>
                     <option value="6">3</option>
@@ -111,6 +91,13 @@
             </fieldset>
             <input type="submit" value="submit">
         </form>
+        <div class="movie">
+            <h1></h1>
+            <div class="posterImage"></div>
+            <p class="genre"></p>
+            <p class="releaseDate"></p>
+            <p class="overview"></p>
+        </div>
     </main>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
         crossorigin='anonymous'></script>

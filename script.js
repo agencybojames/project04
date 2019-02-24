@@ -12,7 +12,7 @@ $(function () {
   // console.log('document')
 })
 
-app.formSubmit = function() {
+app.formSubmit = function () {
   // submit form and prevent default
   $('form').on('submit', (event) => {
     event.preventDefault();
@@ -69,63 +69,26 @@ app.getData = function () {
     console.log(result)
     // console.log('it works')
   })
+
+  // Call to The Movie Database API
+  $.ajax({
+    url: app.movieDBUrl,
+    method: 'GET',
+    dataType: 'json',
+    data: {
+      api_key: app.movieDBKey,
+      with_genres: app.userGenre,
+      'release_date.gte': app.userDecade,
+      // 'release_date.lte': app.userDecade + 9,
+      'vote_average.gte':app.userRating
+    }
+  }).then((res) => {
+    console.log(res)
+  });
+
 }
-  // AJAX CALL TO MOVIE DB
-  // $.ajax({
-  //   url: app.movieDBUrl,
-  //   method: 'GET',
-  //   dataType: 'json',
-  //   data: {
-  //     api_key: app.movieDBKey,
-  //     // query: 'rocky',
-  //     // sort_by: “popularity.desc”
-
-  //   }
-
-  // })
-  //Filter TMDB by genre chosen by user
-  app.getGenre = function() {
-    $.ajax({
-      url: app.movieDBUrl,
-        method: 'GET',
-        dataType: 'json',
-        data: {
-          api_key: app.movieDBKey,
-          with_genres: '28'
-        }
-      }).then((res) => {
-        console.log(res)
-      });
-  }
-// Filter TMDB by decades chosen by user
-  //   app.getGenre = function() {
-  //   $.ajax({
-  //     url: app.movieDBUrl,
-  //       method: 'GET',
-  //       dataType: 'json',
-  //       data: {
-  //         api_key: app.movieDBKey,
-
-  //       }
-  //     }).then((res) => {
-  //       console.log(res)
-  //     });
-  // }
-// Filter TMDB by movie rating chosen by user
-// app.getGenre = function() {
-//   $.ajax({
-//     url: app.movieDBUrl,
-//       method: 'GET',
-//       dataType: 'json',
-//       data: {
-//         api_key: app.movieDBKey,
-
-//       }
-//     }).then((res) => {
-//       console.log(res)
-//     });
 app.init = function () {
 
   app.formSubmit();
-  
+
 }
