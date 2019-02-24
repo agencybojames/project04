@@ -7,6 +7,13 @@ $(function () {
   app.init();
 })
 
+app.init = function () {
+
+  app.formSubmit();
+
+}
+
+
 app.formSubmit = function () {
   // every time we 'submit', run the following code:
   // prevent default
@@ -52,18 +59,6 @@ app.getData = function () {
 
 
 
-
-
-
-
-
-
-
-  app.init = function () {
-
-    app.formSubmit();
-
-  }
 
 
 
