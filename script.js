@@ -49,6 +49,9 @@ app.formSubmit = function() {
   })
 }
 
+
+
+
 app.getData = function () {
   // AJAX CALL TO YUMMLY API
   $.ajax({
@@ -66,24 +69,62 @@ app.getData = function () {
     console.log(result)
     // console.log('it works')
   })
-
+}
   // AJAX CALL TO MOVIE DB
+  // $.ajax({
+  //   url: app.movieDBUrl,
+  //   method: 'GET',
+  //   dataType: 'json',
+  //   data: {
+  //     api_key: app.movieDBKey,
+  //     // query: 'rocky',
+  //     // sort_by: “popularity.desc”
+
+  //   }
+
+  // })
+  //Filter TMDB by genre chosen by user
+  // app.getGenre = function() {
+  //   $.ajax({
+  //     url: app.movieDBUrl,
+  //       method: 'GET',
+  //       dataType: 'json',
+  //       data: {
+  //         api_key: app.movieDBKey,
+  //         with_genres: app.userGenre
+  //       }
+  //     }).then((res) => {
+  //       console.log(res)
+  //     });
+  // }
+// Filter TMDB by decades chosen by user
+    app.getGenre = function() {
+    $.ajax({
+      url: app.movieDBUrl,
+        method: 'GET',
+        dataType: 'json',
+        data: {
+          api_key: app.movieDBKey,
+
+        }
+      }).then((res) => {
+        console.log(res)
+      });
+  }
+// Filter TMDB by movie rating chosen by user
+app.getGenre = function() {
   $.ajax({
     url: app.movieDBUrl,
-    method: 'GET',
-    dataType: 'json',
-    data: {
-      api_key: app.movieDBKey,
-      // query: 'rocky',
-      // sort_by: “popularity.desc”
+      method: 'GET',
+      dataType: 'json',
+      data: {
+        api_key: app.movieDBKey,
 
-    }
-
-  }).then((res) => {
-    console.log(res)
-  });
+      }
+    }).then((res) => {
+      console.log(res)
+    });
 }
-
 app.init = function () {
 
   app.formSubmit();
