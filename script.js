@@ -9,7 +9,6 @@ app.movieDBUrl = 'https://api.themoviedb.org/3/discover/movie'
 
 $(function () {
   app.init();
-  // console.log('document')
 })
 
 app.formSubmit = function () {
@@ -23,11 +22,8 @@ app.formSubmit = function () {
     console.log(app.userCuisine)
 
     // gather user choice of flavour
-    app.userFlavour = $('#flavourChoice').val()
-    console.log(app.userFlavour)
-
-    // use app.userFlavour to filter highest flavour range 
-
+    app.userDiet = $('#dietChoice').val()
+    console.log(app.userDiet)
 
     // gather user choice of cookTime
     app.userCookTime = $('#timeChoice').val()
@@ -49,6 +45,15 @@ app.formSubmit = function () {
   })
 }
 
+
+const matchesArray = function(array){
+
+array.forEach(recipe => {
+  app.recipeId = recipe.id
+  // console.log(app.recipeId)
+})
+}
+
 app.getData = function () {
   // AJAX CALL TO YUMMLY API
   $.ajax({
@@ -61,27 +66,35 @@ app.getData = function () {
       requirePictures: true,
       maxResult: 100,
       'allowedCuisine[]': `cuisine^cuisine-${app.userCuisine}`,
+      'allowedDiet[]': app.userDiet,
+      'maxTotalTimeInSeconds': app.userCookTime
     }
   }).then(function (result) {
-    console.log(result)
-    // console.log('it works')
+    // console.log(result)
+    matchesArray(result.matches);
+
   })
 
-  // AJAX CALL TO MOVIE DB
   $.ajax({
-    url: app.movieDBUrl,
-    method: 'GET',
-    dataType: 'json',
-    data: {
-      api_key: app.movieDBKey,
-      // query: 'rocky',
-      // sort_by: “popularity.desc”
+    url: `http://api.yummly.com/v1/api/recipe/${app.recipeId}?_app_id=${app.yummlyApiID}&_app_key=${app.yummlyApiKey}`,
+    method: 'GET'
+  }).then(function(yup) {
+    console.log(yup)
+  }) 
 
-    }
-
-  }).then((res) => {
-    console.log(res)
-  });
+  // AJAX CALL TO MOVIE DB
+//   $.ajax({
+//     url: app.movieDBUrl,
+//     method: 'GET',
+//     dataType: 'json',
+//     data: {
+//       api_key: app.movieDBKey,
+//       // query: 'rocky',
+//       // sort_by: “popularity.desc”
+//     }
+//   }).then((res) => {
+//     // console.log(res.results)
+//   });
 }
 
 app.init = function () {
@@ -89,3 +102,7 @@ app.init = function () {
   app.formSubmit();
 
 }
+
+
+
+
