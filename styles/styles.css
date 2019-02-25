@@ -177,6 +177,97 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+body {
+  max-width: 1600px;
+  background: linear-gradient(45deg, #193686, #06159c, #273480);
+  background-repeat: no-repeat;
+  color: #d8d5d5;
+  font-family: "Roboto", sans-serif;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  color: #d8d5d5;
+}
+
+form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.1em;
+}
+
+legend {
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+}
+
+.searchField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+.searchField label {
+  margin: 0.5em;
+}
+
+.submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100%;
+}
+
+input[type="submit"] {
+  font-family: "Anton", sans-serif;
+  width: 5em;
+  margin: 0.3em auto;
+  text-transform: uppercase;
+  border: 0.1em solid #d8d5d5;
+  -webkit-transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.4s;
+}
+
+input[type="submit"]:hover {
+  background: #ffbb00;
+  border: 0.1em solid #f51515;
+  color: #2aad2a;
+}
+
+fieldset {
+  max-width: 80%;
+  margin: 1em;
+}
+
 img {
   max-width: 100%;
   display: block;

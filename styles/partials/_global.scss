@@ -1,4 +1,76 @@
+
+body {
+    max-width: 1600px;
+    background: $backgroundColor;
+    background-repeat: no-repeat;
+    color: $secondaryColor;
+    font-family: $primaryFont;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: $secondaryFont;
+    color: $secondaryColor;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1em;
+}
+
+legend {
+    text-transform: uppercase;
+    font-family: $secondaryFont;
+}
+
+.searchField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+        label {
+            margin: 0.5em;
+        }
+
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+input[type="submit"] {
+    font-family: $secondaryFont;
+    width: 5em;
+    margin: 0.3em auto;
+    text-transform: uppercase;
+    border: 0.1em solid $secondaryColor;
+    transition: ease-in-out 0.4s;
+}
+
+input[type="submit"]:hover {
+    background: $accentColor;
+    border: 0.1em solid $borderColor;
+    color: $selectColor;
+    
+}
+
+fieldset {
+    max-width: 80%;
+    margin: 1em;
+}
+
+
 img {
     max-width: 100%;
     display: block;
 }
+

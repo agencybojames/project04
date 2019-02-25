@@ -56,21 +56,14 @@ app.getData = function () {
     // get all results
     const movieResults = res.results;
     console.log(movieResults);
-    // get movie genre
-    // const movieGenre = movieResults.genre_ids;
-
-    // console.log(movieGenre);
-
   });
 
 }
 
 
-
-
 app.init = function () {
 
   app.formSubmit();
-
 }
+
 

@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Mukta|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>What to watch?!</title>
+    <title>Watch It</title>
 </head>
 
 <body>
     <main>
+        <div class="heading">
+            <h1>Hey, Watch It!</h1>
+        </div>
         <form action="submit" class="movies">
             <fieldset>
                 <legend>Movie Genre</legend>
@@ -37,28 +41,37 @@
                     <option value="10770">TV Movie</option>
                 </select>
             </fieldset>
-            <fieldset>
+            <fieldset class="searchField">
                 <legend>Movie Year Range</legend>
-                <label for="minYear">From:</label>
-                <input type="text" value="year" id="minYear" name="minYear">
-                <label for="maxYear">To:</label>
-                <input type="text" value="year" id="maxYear" name="maxYear">
+                <label for="minYear">From which year?</label>
+                <input type="text" value="" id="minYear" placeholder="Enter min. year">
+                <label for="maxYear">To which year?</label>
+                <input type="text" value="" id="maxYear" placeholder="Enter max. year">
             </fieldset>
             <fieldset>
                 <legend>Minimum Movie Rating</legend>
-                <select name="rating" id="ratingChoice">
-                    <option>Select minimum rating</option>
-                    <option value="2">1</option>
-                    <option value="4">2</option>
-                    <option value="6">3</option>
-                    <option value="8">4</option>
-                    <option value="10">5</option>
-                </select>
+                <div class="customSelect">
+                    <select name="rating" id="ratingChoice">
+                        <option>Select min. rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
             </fieldset>
-            <input type="submit" value="submit">
+            <div class="submit">
+                <input type="submit" value="submit">
+            </div>
         </form>
         <div class="movie">
-            <h1></h1>
+            <h1 id="title"></h1>
             <div class="posterImage"></div>
             <p class="genre"></p>
             <p class="releaseDate"></p>
