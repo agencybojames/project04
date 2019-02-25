@@ -180,8 +180,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 body {
   height: 100vh;
   max-width: 1600px;
-  background: blue;
-  background-repeat: no-repeat;
+  background-image: url("../assets/TV-bad-signal-texture-background-free.jpg");
   color: #d8d5d5;
   font-family: "Roboto", sans-serif;
 }
