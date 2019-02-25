@@ -1,8 +1,10 @@
 
-body {
-    height: 100vh;
+html {
+    height: 100%;
     max-width: 1600px;
-    background-image: url('../assets/TV-bad-signal-texture-background-free.jpg');
+    background-image: url('../assets/enrico-mantegazza-709450-unsplash.jpg');
+    background-repeat: no-repeat;
+    object-fit: cover; 
     color: $secondaryColor;
     font-family: $primaryFont;
 }
@@ -15,12 +17,11 @@ h1 {
 }
 
 h2 {
-    margin: 0.5em auto;
+    margin: 0.5em auto 0em;
 }
 
 p {
-    margin: 0 auto;
-    margin-bottom: 4.5em;
+    margin: 0.5em auto 0.5em;
     max-width: 70%;
 }
 
@@ -71,11 +72,15 @@ fieldset {
 img {
     max-width: 100%;
     align-self: center;
-    box-shadow: 1em $borderColor;
+    margin: 1em;
+    box-shadow: -1px 3px 21px 12px rgba(0,0,0,0.75);
+
 }
 
 .poster {
-    background: $backgroundColor;
+    background: url('../assets/enrico-mantegazza-709450-unsplash.jpg');
+    // background-repeat: repeat;
+    object-fit: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,6 +88,7 @@ img {
 
 .center {
     text-align: center;
-    margin: 0 auto;
+    margin: 2em auto 0em;
+    padding-bottom: 1em;
 }
 

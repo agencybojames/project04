@@ -177,27 +177,29 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-body {
-  height: 100vh;
+html {
+  height: 100%;
   max-width: 1600px;
-  background-image: url("../assets/TV-bad-signal-texture-background-free.jpg");
-  color: #d8d5d5;
+  background-image: url("../assets/enrico-mantegazza-709450-unsplash.jpg");
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  color: #533804;
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
   font-family: "Anton", sans-serif;
-  color: #d8d5d5;
+  color: #533804;
   text-align: center;
 }
 
 h2 {
-  margin: 0.5em auto;
+  margin: 0.5em auto 0em;
 }
 
 p {
-  margin: 0 auto;
-  margin-bottom: 4.5em;
+  margin: 0.5em auto 0.5em;
   max-width: 70%;
 }
 
@@ -241,7 +243,7 @@ input[type="submit"] {
   width: 5em;
   margin: 0.3em auto;
   text-transform: uppercase;
-  border: 0.1em solid #d8d5d5;
+  border: 0.1em solid #533804;
   -webkit-transition: ease-in-out 0.4s;
   transition: ease-in-out 0.4s;
 }
@@ -262,12 +264,15 @@ img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-box-shadow: 1em #f51515;
-          box-shadow: 1em #f51515;
+  margin: 1em;
+  -webkit-box-shadow: -1px 3px 21px 12px rgba(0, 0, 0, 0.75);
+          box-shadow: -1px 3px 21px 12px rgba(0, 0, 0, 0.75);
 }
 
 .poster {
-  background: blue;
+  background: url("../assets/enrico-mantegazza-709450-unsplash.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,6 +287,7 @@ img {
 
 .center {
   text-align: center;
-  margin: 0 auto;
+  margin: 2em auto 0em;
+  padding-bottom: 1em;
 }
 /*# sourceMappingURL=styles.css.map */
