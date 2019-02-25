@@ -71,7 +71,7 @@ app.getMovies = function () {
 
     // create a variable called moviesFinal which takes only the first 3 objects from the movies array and stores them.
     let moviesFinal = movies.slice(1, 4)
-    console.log(moviesFinal)
+
 
     moviesFinal.forEach(function (movie) {
       $('div.poster').addClass('center').append(`<img src="${app.posterUrl}${movie.poster_path}">`);
