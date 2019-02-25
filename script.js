@@ -1,44 +1,54 @@
+//create an object called app which will store everything.
 const app = {};
 
+//create properties on app which will hold the api key and api url strings
 app.movieDBKey = '59be6234ea545ba637c135657e114e1d'
 app.movieDBUrl = 'https://api.themoviedb.org/3/discover/movie'
+app.posterUrl = 'http://image.tmdb.org/t/p/w500'
 
+//call document ready which calls app.init 
 $(function () {
   app.init();
 })
 
+//app.init calls app.userInput()
 app.init = function () {
-
-  app.formSubmit();
-
+  app.userInput();
 }
 
+//when userInput is called, it runs the following;
+app.userInput = function () {
 
-app.formSubmit = function () {
-  // every time we 'submit', run the following code:
-  // prevent default
+  //grab the form, and on submit, do the following:
   $('form').on('submit', (event) => {
-    event.preventDefault();
+    $('div').empty(),
 
-    // gather user choice of Movie Genre
-    app.userGenre = $('#genreChoice').val()
-    console.log(app.userGenre)
+      //whatever the event of submit is, prevent the default behaviour of it.
+      event.preventDefault();
 
-    // gather user choice of movie year
-    app.userDecade = $('#decadeChoice').val()
-    console.log(app.userDecade)
+    //store the value of the selected genre and store it in a variable called userGenre
+    userGenre = $('#genreChoice').val()
+    // console.log(userGenre)
+
+    // gather user choice of minimum movie release year
+    userMinYear = $('#minYear').val()
+    // console.log(userMinYear)
+
+    // gather user choice of maximum movie release year
+    userMaxYear = $('#maxYear').val()
+    // console.log(userMaxYear)
 
     //gather user choice of movie rating
-    app.userRating = $('#ratingChoice').val()
-    console.log(app.userRating)
+    userRating = $('#ratingChoice').val()
+    // console.log(userRating)
 
-    //call getData, which is a method that makes the API call.
-    app.getData();
+    //call getMovies, which is a method that makes the API call.
+    app.getMovies();
   })
 }
 
 //method which makes the ajax call and then returns
-app.getData = function () {
+app.getMovies = function () {
 
   // Call to The Movie Database API
   $.ajax({
@@ -47,19 +57,42 @@ app.getData = function () {
     dataType: 'json',
     data: {
       api_key: app.movieDBKey,
-      with_genres: app.userGenre,
-      'vote_average.gte': app.userRating,
+      with_genres: userGenre,
+      // total_results: 3,
+      'vote_average.gte': userRating,
       sort_by: 'popularity.desc',
-      'primary_release_date.gte': 1998,
-      'primary_release_date.lte': 2004,
+      'vote_count.gte': 100,
+      'primary_release_date.gte': userMinYear,
+      'primary_release_date.lte': userMaxYear,
     }
+    // res becomes the object that carries the "result" array
   }).then((res) => {
-    console.log(res.results)
+    app.showMovies(res.results)
+    // console.log(res.results)
   });
 
+  //the app.showMovies function, when called, does the following;
+  app.showMovies = function (movies) {
 
+    // console.log(movies)
+    // create a variable called moviesFinal which takes only the first 3 objects from the movies array and stores them.
+    let moviesFinal = movies.slice(1, 4)
+    console.log(moviesFinal)
 
+    moviesFinal.forEach(function (movie) {
+      $('div').append(`<h2>${movie.title}</h2>`);
+      $('div').append(`<h2>${movie.release_date}</h2>`)
+      $('div').append(`<h2>${movie.vote_average}</h2>`)
+      $('div').append(`<img src="${app.posterUrl}${movie.poster_path}">`)
+    })
+    
+      //create a variable called eachMovie and in it store the following; grab the 
+      // const eachMovie = $('<div>').append(movieTitle, releaseDate, voteAverage)
+      // console.log(eachMovie)
 
-
-
+      // $('#movieTitle').append(eachMovie);
+      // $('.poster').append(eachMovie);
+    // })
+  }
 }
+
