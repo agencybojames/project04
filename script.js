@@ -80,10 +80,11 @@ app.getMovies = function () {
     console.log(moviesFinal)
 
     moviesFinal.forEach(function (movie) {
-      $('div.poster').append(`<h2>${movie.title}</h2>`);
-      $('div.poster').append(`<h2>${movie.release_date}</h2>`)
-      $('div.poster').append(`<h2>${movie.vote_average}</h2>`)
-      $('div.poster').append(`<img src="${app.posterUrl}${movie.poster_path}">`)
+      $('div.poster').addClass('center').append(`<h2>Title: ${movie.title}</h2>`);
+      $('div.poster').append(`<h2>Release Date: ${movie.release_date}</h2>`);
+      $('div.poster').append(`<h2>Rating: ${movie.vote_average}/10</h2>`);
+      $('div.poster').addClass('center').append(`<img src="${app.posterUrl}${movie.poster_path}">`);
+      $('div.poster').append(`<h2>Synopsis </h2><p>${movie.overview}</p>`);
     })
     
       //create a variable called eachMovie and in it store the following; grab the 
