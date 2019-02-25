@@ -80,10 +80,10 @@ app.getMovies = function () {
     console.log(moviesFinal)
 
     moviesFinal.forEach(function (movie) {
-      $('div').append(`<h2>${movie.title}</h2>`);
-      $('div').append(`<h2>${movie.release_date}</h2>`)
-      $('div').append(`<h2>${movie.vote_average}</h2>`)
-      $('div').append(`<img src="${app.posterUrl}${movie.poster_path}">`)
+      $('div.poster').append(`<h2>${movie.title}</h2>`);
+      $('div.poster').append(`<h2>${movie.release_date}</h2>`)
+      $('div.poster').append(`<h2>${movie.vote_average}</h2>`)
+      $('div.poster').append(`<img src="${app.posterUrl}${movie.poster_path}">`)
     })
     
       //create a variable called eachMovie and in it store the following; grab the 
@@ -95,5 +95,3 @@ app.getMovies = function () {
     // })
   }
 }
-
-

@@ -12,9 +12,7 @@
 
 <body>
     <main>
-        <div class="heading">
             <h1>Hey, Watch It!</h1>
-        </div>
         <form action="submit" class="movies">
             <fieldset>
                 <legend>Movie Genre</legend>
@@ -50,7 +48,6 @@
             </fieldset>
             <fieldset>
                 <legend>Minimum Movie Rating</legend>
-                <div class="customSelect">
                     <select name="rating" id="ratingChoice">
                         <option>Select min. rating</option>
                         <option value="1">1</option>
@@ -64,18 +61,11 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                     </select>
-                </div>
             </fieldset>
             <div class="submit">
                 <input type="submit" value="submit">
             </div>
         </form>
-        <div class="movie">
-            <h1 id="title"></h1>
-            <div class="posterImage"></div>
-            <p class="genre"></p>
-            <p class="releaseDate"></p>
-            <p class="overview"></p>
             <div class="poster">
                 <div class="overlay" id="overlay"></div>
             </div>
