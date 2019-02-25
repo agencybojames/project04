@@ -28,19 +28,15 @@ app.userInput = function () {
 
     //store the value of the selected genre and store it in a variable called userGenre
     userGenre = $('#genreChoice').val()
-    // console.log(userGenre)
 
     // gather user choice of minimum movie release year
     userMinYear = $('#minYear').val()
-    // console.log(userMinYear)
 
     // gather user choice of maximum movie release year
     userMaxYear = $('#maxYear').val()
-    // console.log(userMaxYear)
 
     //gather user choice of movie rating
     userRating = $('#ratingChoice').val()
-    // console.log(userRating)
 
     //call getMovies, which is a method that makes the API call.
     app.getMovies();
@@ -58,7 +54,6 @@ app.getMovies = function () {
     data: {
       api_key: app.movieDBKey,
       with_genres: userGenre,
-      // total_results: 3,
       'vote_average.gte': userRating,
       sort_by: 'popularity.desc',
       'vote_count.gte': 100,
@@ -74,7 +69,6 @@ app.getMovies = function () {
   //the app.showMovies function, when called, does the following;
   app.showMovies = function (movies) {
 
-    // console.log(movies)
     // create a variable called moviesFinal which takes only the first 3 objects from the movies array and stores them.
     let moviesFinal = movies.slice(1, 4)
     console.log(moviesFinal)
@@ -86,13 +80,5 @@ app.getMovies = function () {
       $('div.poster').append(`<h2>Rating: ${movie.vote_average}/10</h2>`);
       $('div.poster').append(`<h2>Synopsis </h2><p>${movie.overview}</p>`);
     })
-    
-      //create a variable called eachMovie and in it store the following; grab the 
-      // const eachMovie = $('<div>').append(movieTitle, releaseDate, voteAverage)
-      // console.log(eachMovie)
-
-      // $('#movieTitle').append(eachMovie);
-      // $('.poster').append(eachMovie);
-    // })
   }
 }
